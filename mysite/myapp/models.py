@@ -2,6 +2,8 @@ from django.db import models
 from django.utils.translation import gettext as _
 from django.core.mail import send_mail
 from django.conf import settings
+from django.utils import timezone
+
 # Create your models here.
 
 STATUS_CHOIСES = (
@@ -19,6 +21,7 @@ class Play(models.Model):
     image = models.ImageField()
     text = models.TextField()
     tickets = models.PositiveIntegerField()
+    date = models.DateTimeField(default=timezone.now)
 
 class Reservation(models.Model):
     play = models.ForeignKey(Play, on_delete=models.CASCADE)
@@ -38,6 +41,9 @@ class Reservation(models.Model):
             )
         return super().save(*args, **kwargs)
         
-    
+class Feedback(models.Model):
+    email = models.EmailField()
+    text = models.TextField()
+
         
 

@@ -1,0 +1,14 @@
+{% extends base.html %}
+
+{% block title %}
+Resrvation
+{% enblock %}
+
+{% block content %}
+
+<form class="reservation" method="post">
+    {% csrf_token %}
+    {{form}}
+</form>
+
+{% enblock %}

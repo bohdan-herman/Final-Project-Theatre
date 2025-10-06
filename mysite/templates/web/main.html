@@ -1,0 +1,53 @@
+{% extends "web/base.html" %}
+
+{% block title %}
+Main
+{% endblock %}
+
+{% block content %}
+<div class="carousel">
+        <h2>Карусель</h2>
+    <div class="carousel-container">
+    
+    {% for image in carousel_images %}
+    <div class="carousel-slide">
+    <img src="{{ image.image.url }}" alt="">
+    </div>
+    {% endfor %}
+    </div>   
+    <div class="carousel-buttons">
+  <button class="prev" onclick="carouselMove(false)">&#10094;</button>
+  <button class="next" onclick="carouselMove()">&#10095;</button>
+</div>
+</div>
+
+
+<div class="afisha">
+  <div class="container-afisha">
+    <h2>Афиша</h2>
+    <a href="{% url 'program_page' %}" class="all-events">Все мероприятия</a>
+  </div>
+
+  <div class="play-container">
+    {% for play in plays %}
+    <div class="play">
+      <div class="play-date">
+        
+        <span class="day">{{ play.date|date:"j" }}</span>
+        <span class="month">{{ play.date|date:"F" }}</span>
+      </div>
+
+      <div class="play-content">
+        <img src="{{ play.image.url }}" alt="">
+        <div class="play-info">
+        <h3>{{ play.name }}</h3>
+        <a href="{% url 'play_page' play.id %}" class="buy-btn-more">Подробнее</a>
+        <a href="{% url 'create_reservation' play.id %}" class="buy-btn-reservation">Заказать билет</a>
+      </div>
+    </div>
+      </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

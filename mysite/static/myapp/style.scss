@@ -1,0 +1,561 @@
+$gap: 10px;
+$background-color:#fafafa;
+$background-color-black:#191919;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  font-family: Arial, sans-serif;
+
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+   display: flex;
+   flex-direction: row;
+   background-color: $background-color-black;
+   align-items: center;
+   justify-content: center;
+   gap: 10vw;
+   padding-top: 32px;
+   padding-bottom: 32px;
+   margin-bottom: 60px;
+  h1 {
+    color: #ffffff;
+    font-size: 14px; 
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    a {
+      color: #ffffff;
+      text-decoration: none;
+      white-space: nowrap; 
+      font-size: 16px;
+    }
+
+    span {
+      color: #ffffff;
+      font-size: 6px !important; 
+    }
+  }
+}
+
+
+
+
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 16px;
+  background-color: $background-color;
+  margin-bottom:184px ;
+  h2 {
+    text-align: center;
+    margin-bottom: 16px;
+    color: #191919;
+  }
+
+  .carousel-container {
+    display: flex;
+    gap: $gap;
+    overflow: hidden; 
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      background: transparent;
+    }
+  }
+
+  .carousel-slide {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    scroll-snap-align: start;
+img {
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+  }
+
+  .carousel-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 12px;
+
+    button.prev,
+    button.next {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: 15px;
+      opacity: 0.5;
+      transition: opacity 0.1s;
+      
+      &:hover {
+        opacity: 1;
+        transition: 0.6s;
+        scale: 1.1;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+.afisha {
+  display: flex;
+  flex-direction: column;
+  font-family: "Georgia", serif;
+  background-color: $background-color;
+  color: #222;
+  margin-bottom: 100px;
+  padding-bottom: 50px;
+  .container-afisha {
+    margin-top: 50px;
+    padding: 0 clamp(16px, 10vw, 312px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+
+    h2 {
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: #007f6d;
+      font-size: clamp(14px, 1.5vw, 18px);
+      font-weight: 500;
+      transition: 0.3s ease;
+
+      &:hover {
+        color: #00b894;
+        transform: translateX(3px);
+      }
+    }
+  }
+}
+  .play-container {
+    padding: 0 clamp(16px, 10vw, 312px);
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    .play {
+      display: flex;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      align-items: center;
+      min-height: 260px;
+      position: relative;
+      transition: 0.3s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .play-date {
+        width: 180px;
+        text-align: center;
+        background: #f0f0f0;
+        padding: 50px 0;
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-right: 2px solid #ececec;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        .day {
+          display: block;
+          font-size: 48px;
+          color: #222;
+        }
+
+        .month {
+          text-transform: uppercase;
+          font-size: 16px;
+          color: #777;
+        }
+      }
+
+      .play-content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        flex: 1;
+        padding: 40px;
+        background-color: #fff;
+
+        img {
+          width: 320px;
+          height: 240px;
+          border-radius: 12px;
+          object-fit: cover;
+          flex-shrink: 0;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+          transition: 0.3s;
+
+          &:hover {
+            transform: scale(1.02);
+          }
+        }
+
+        .play-info {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 16px;
+
+          h3 {
+            font-size: clamp(18px, 2vw, 24px);
+            color: #000;
+            margin: 0;
+          }
+        }
+
+        .buy-btn-more,
+        .buy-btn-reservation {
+          position: absolute;
+          right: 40px;
+          background-color: #00b894;
+          color: white;
+          padding: 10px 26px;
+          border-radius: 30px;
+          text-decoration: none;
+          font-weight: 500;
+          transition: 0.25s ease;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+          &:hover {
+            background-color: #009e7a;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+          }
+        }
+
+        .buy-btn-more {
+          bottom: 40px;
+        }
+
+        .buy-btn-reservation {
+          bottom: 100px;
+        }
+      }
+    }
+  }
+
+
+footer {
+  background-color: $background-color-black; 
+  color: #dcdcdc;
+  padding: 60px 312px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Georgia", serif;
+
+  h4 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  p,
+  li,
+  a {
+    font-size: 15px;
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: #fff;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-partners,
+  .footer-contacts {
+    width: 30%;
+  }
+
+  .footer-socials {
+    margin-top: 10px;
+
+    a {
+      color: #aaa;
+      font-size: 14px;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+@media (min-width: 1025px){
+    .carousel-slide {
+    width: calc((100% - ($gap * 2)) / 3); 
+  }
+}
+/* --- Адаптация для экранов до 1024px --- */
+@media (max-width: 1024px) {
+  header {
+    padding: 20px 0;
+
+    h1 {
+      font-size: 12px;
+      margin-left: 10px;
+    }
+
+    nav {
+      gap: 12px;
+
+      a { font-size: 14px; }
+      span { font-size: 5px !important; }
+    }
+  }
+    .carousel-slide {
+    width: calc((100% - ($gap )) / 2); 
+  }
+  .container-afisha {
+      padding: 0 80px;
+
+      h2 {
+        font-size: 30px;
+      }
+
+      a {
+        font-size: 16px;
+      }
+    }
+
+    .play-container {
+      padding: 0 80px;
+      gap: 40px;
+
+      .play {
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: auto;
+
+        .play-date {
+          width: 100%;
+          padding: 20px 0;
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+
+          .day {
+            font-size: 36px;
+          }
+
+          .month {
+            font-size: 14px;
+          }
+        }
+
+        .play-content {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 20px;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+
+          .play-info {
+            h3 {
+              font-size: 20px;
+            }
+
+            .desc {
+              font-size: 14px;
+            }
+          }
+
+          .buy-btn-more,
+          .buy-btn-reservation {
+            position: static;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+    footer{
+          padding: 40px 80px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+
+    &::before {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .footer-partners,
+    .footer-contacts {
+      width: 100%;
+    }
+    }
+}
+
+/* --- Адаптация для экранов до 480px --- */
+@media (max-width: 480px) {
+  header {
+    padding: 10px 0;
+
+    h1 { font-size: 10px; }
+
+    nav {
+      gap: 8px;
+
+      a { font-size: 12px; }
+      span { font-size: 4px !important; }
+    }
+  }
+   .carousel-slide {
+    width: 100%; // 1 картинка
+  }
+   .container-afisha {
+      padding: 0 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+
+      h2 {
+        font-size: 26px;
+      }
+
+      a {
+        font-size: 14px;
+      }
+    }
+
+    .play-container {
+      padding: 0 20px;
+      gap: 30px;
+
+      .play {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        border-radius: 12px;
+
+        .play-date {
+          padding: 10px 0;
+          .day {
+            font-size: 32px;
+          }
+          .month {
+            font-size: 13px;
+          }
+        }
+
+        .play-content {
+          padding: 0;
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+
+          .play-info {
+            h3 {
+              font-size: 18px;
+              text-align: center;
+            }
+
+            .desc {
+              font-size: 13px;
+              text-align: center;
+            }
+          }
+
+          .buy-btn-more,
+          .buy-btn-reservation {
+            position: static;
+            margin: 6px 0;
+            width: 100%;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    footer{
+          padding: 40px 20px;
+    h4 {
+      font-size: 18px;
+    }
+
+    p,
+    li,
+    a {
+      font-size: 14px;
+    }
+
+    .footer-socials a {
+      font-size: 13px;
+    }
+  }
+}
+  
+

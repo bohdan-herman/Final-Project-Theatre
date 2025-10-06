@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/style.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <header>
+    <h1>Сайт Концертно - экскурсионных программ</h1>
+    <nav>
+        <a href="{% url 'program_page' %}">Программа</a>
+        <span class="material-symbols-outlined">
+thermostat_carbon
+</span>
+        <a href="{% url 'about_us_page' %}">О нас</a>
+       <span class="material-symbols-outlined">
+thermostat_carbon
+</span>
+        <a href="{% url 'tickets_page' %}">Билеты</a>
+       <span class="material-symbols-outlined">
+thermostat_carbon
+</span>
+        <a href="{% url 'contacts_page' %}">Контакты</a>
+       <span class="material-symbols-outlined">
+thermostat_carbon
+</span>
+        <a href="{% url 'partners_page' %}">Партнеры</a>
+    </nav>
+</header>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+<div class="footer-partners">
+  <h4>Наши партнёры</h4>
+  <ul>
+    <li><a href="#">Культурный фонд «АртВремя»</a></li>
+    <li><a href="#">Сеть кофеен «Кофе & Сцена»</a></li>
+    <li><a href="#">Издательство «Театральные Истории»</a></li>
+    <li><a href="#">Туристическое агентство «Мир впечатлений»</a></li>
+    <li><a href="#">Медиа-группа «Культура Онлайн»</a></li>
+  </ul>
+</div>
+<div class="footer-contacts">
+  <h4>Контакты</h4>
+  <p>📍 г. Прага, ул. Итальянская, 15</p>
+  <p>📞 +7 (812) 345-67-89</p>
+  <p>✉️ <a href="mailto:info@theatre.art">info@theatre.art</a></p>
+  <p>🕒 Пн–Вс: 10:00–22:00</p>
+
+  <div class="footer-socials">
+    <a href="#">Telegram</a> |
+    <a href="#">Instagram*</a>
+  </div>
+</div>
+    
+    
+
+</footer>
+</body>
+<script src="{% static 'index.js' %}"></script>
+
+</html>

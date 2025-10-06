@@ -1,5 +1,5 @@
 from django import forms
-from .models import Play, Reservation, Carousel
+from .models import Play, Reservation, Carousel, Feedback
 from django.core.exceptions import ValidationError
 
 class PlayForm(forms.ModelForm):
@@ -13,16 +13,15 @@ class ReservationForm(forms.ModelForm):
         fields = ['email', 'amount']
     
     def __init__(self, *args, **kwargs):
-        self.request = kwargs.pop('request', None)
+        self.pk = kwargs.pop('pk', None)
         super().__init__(*args, **kwargs)
     
     def clean(self):
         cleaned_data = super().clean()
-        amount = cleaned_data.get["amount"]
-        play_id = self.request.POST.get("play_id")
+        amount = cleaned_data.get("amount") 
 
         try:
-            play = Play.objects.get(id=play_id)
+            play = Play.objects.get(id=self.pk)
 
         except Play.DoesNotExist:
             raise ValidationError('Play does not exist')
@@ -33,7 +32,13 @@ class ReservationForm(forms.ModelForm):
         self.instance.play = play
         return cleaned_data
     
-class CarouselForm(forms.Model):
+class CarouselForm(forms.ModelForm):
     class Meta:
         model = Carousel
         fields = ["image"]       
+
+
+class FeedbackForm(forms.ModelForm):
+    class Meta:
+        model = Feedback
+        fields = ["email", "text"]
