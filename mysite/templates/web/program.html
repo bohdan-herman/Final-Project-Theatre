@@ -1,0 +1,39 @@
+{% extends "web/base.html" %}
+
+
+{% block title %}
+Afisha
+{% endblock %}
+
+
+{% block content %}
+<div class="afisha">
+  <div class="container-afisha-program">
+    <h2>Афиша</h2>
+  </div>
+
+  <div class="play-container">
+    {% for play in plays %}
+    <div class="play">
+      <div class="play-date">
+        
+        <span class="day">{{ play.date|date:"j" }}</span>
+        <span class="month">{{ play.date|date:"F" }}</span>
+      </div>
+
+      <div class="play-content">
+        <img src="{{ play.image.url }}" alt="">
+        <div class="play-info">
+        <h3>{{ play.name }}</h3>
+        <h3 >{{play.get_status_display}}</h3>
+        <a href="{% url 'play_page' play.id %}" class="buy-btn-more">Подробнее</a>
+        {% if play.status == 2 %}
+        <a href="{% url 'create_reservation' play.id %}" class="buy-btn-reservation">Заказать билет</a>
+      {% endif %}
+      </div>
+    </div>
+      </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

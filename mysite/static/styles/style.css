@@ -33,7 +33,7 @@ header {
   gap: 10vw;
   padding-top: 32px;
   padding-bottom: 32px;
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 }
 header h1 {
   color: #ffffff;
@@ -70,7 +70,7 @@ header nav span {
   overflow: hidden;
   padding: 16px;
   background-color: #fafafa;
-  margin-bottom: 184px;
+  margin-bottom: 100px;
 }
 .carousel h2 {
   text-align: center;
@@ -164,29 +164,25 @@ header nav span {
   font-family: "Georgia", serif;
   background-color: #fafafa;
   color: #222;
-  margin-bottom: 100px;
   padding-bottom: 50px;
 }
-.afisha .container-afisha {
+.afisha .container-afisha, .afisha .container-afisha-program {
   margin-top: 50px;
   padding: 0 clamp(16px, 10vw, 312px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 60px;
 }
-.afisha .container-afisha h2 {
+.afisha .container-afisha h2, .afisha .container-afisha-program h2 {
   font-size: clamp(26px, 3vw, 38px);
   font-weight: 700;
   letter-spacing: 0.5px;
 }
-.afisha .container-afisha a {
+.afisha .container-afisha a, .afisha .container-afisha-program a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -201,10 +197,20 @@ header nav span {
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
-.afisha .container-afisha a:hover {
+.afisha .container-afisha a:hover, .afisha .container-afisha-program a:hover {
   color: #00b894;
   -webkit-transform: translateX(3px);
           transform: translateX(3px);
+}
+.afisha .container-afisha {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.afisha .container-afisha-program {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .play-container {
@@ -326,10 +332,10 @@ header nav span {
   color: #000;
   margin: 0;
 }
-.play-container .play .play-content .buy-btn-more,
-.play-container .play .play-content .buy-btn-reservation {
+
+.buy-btn-more,
+.buy-btn-reservation {
   position: absolute;
-  right: 40px;
   background-color: #00b894;
   color: white;
   padding: 10px 26px;
@@ -338,19 +344,23 @@ header nav span {
   font-weight: 500;
   -webkit-transition: 0.25s ease;
   transition: 0.25s ease;
-  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1019607843);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1019607843);
+  right: 40px;
+  right: 40px;
 }
-.play-container .play .play-content .buy-btn-more:hover,
-.play-container .play .play-content .buy-btn-reservation:hover {
+.buy-btn-more:hover,
+.buy-btn-reservation:hover {
   background-color: #009e7a;
   -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
           box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
-.play-container .play .play-content .buy-btn-more {
+
+.buy-btn-more {
   bottom: 40px;
 }
-.play-container .play .play-content .buy-btn-reservation {
+
+.buy-btn-reservation {
   bottom: 100px;
 }
 
@@ -365,6 +375,7 @@ footer {
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-family: "Georgia", serif;
+  margin-top: 100px;
 }
 footer h4 {
   color: #fff;
@@ -436,13 +447,13 @@ footer .footer-socials a:hover {
   .carousel-slide {
     width: calc((100% - 10px) / 2);
   }
-  .container-afisha {
+  .container-afisha, .container-afisha-program {
     padding: 0 80px;
   }
-  .container-afisha h2 {
+  .container-afisha h2, .container-afisha-program h2 {
     font-size: 30px;
   }
-  .container-afisha a {
+  .container-afisha a, .container-afisha-program a {
     font-size: 16px;
   }
   .play-container {
@@ -522,6 +533,100 @@ footer .footer-socials a:hover {
     width: 100%;
   }
 }
+.play-one-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  padding-bottom: 100px;
+  background-color: #f8f8f8;
+  border-radius: 1rem;
+}
+.play-one-container .play-one-name {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.play-one-container .play-one-name h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+.play-one-container .play-one {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 40px;
+}
+.play-one-container .play-one .play-one-image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 350px;
+          flex: 1 1 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.play-one-container .play-one .play-one-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.play-one-container .play-one .play-one-info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 400px;
+          flex: 1 1 400px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+  margin-right: 20px;
+}
+.play-one-container .play-one .play-one-info p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #222;
+}
+.play-one-container .play-one .play-one-info p:last-child {
+  margin-bottom: 0;
+}
+.play-one-container .buy-btn-reservation-play-one {
+  display: inline-block;
+  background: -webkit-gradient(linear, left top, right top, from(#00c26f), to(#00a64f));
+  background: linear-gradient(90deg, #00c26f, #00a64f);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  text-align: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.play-one-container .buy-btn-reservation-play-one:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#00a64f), to(#009347));
+  background: linear-gradient(90deg, #00a64f, #009347);
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 4px 10px rgba(0, 166, 79, 0.3);
+          box-shadow: 0 4px 10px rgba(0, 166, 79, 0.3);
+}
+
 /* --- Адаптация для экранов до 480px --- */
 @media (max-width: 480px) {
   header {
@@ -542,7 +647,7 @@ footer .footer-socials a:hover {
   .carousel-slide {
     width: 100%;
   }
-  .container-afisha {
+  .container-afisha, .container-afisha-program {
     padding: 0 20px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -553,10 +658,10 @@ footer .footer-socials a:hover {
             align-items: flex-start;
     gap: 10px;
   }
-  .container-afisha h2 {
+  .container-afisha h2, .container-afisha-program h2 {
     font-size: 26px;
   }
-  .container-afisha a {
+  .container-afisha a, .container-afisha-program a {
     font-size: 14px;
   }
   .play-container {

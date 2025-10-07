@@ -6,12 +6,11 @@ from .mixins import RequestToFormKwargsMixin, PkToFormKwargsMixin, AdminPassTest
 from .models import Reservation, Play, Carousel
 from .forms import ReservationForm, PlayForm,CarouselForm
 from django.urls import reverse_lazy
-from django.utils import timezone
 
 class CreateReservationView(PkToFormKwargsMixin, CreateView):
     model = Reservation
     form_class = ReservationForm
-    template_name = 'reservation.html'
+    template_name = 'forms/reservation.html'
     success_url = '/'
 
 
@@ -23,14 +22,14 @@ class DeletePlayView(AdminPassTestMixin, DeleteView):
 class UpdatePlayView(AdminPassTestMixin, UpdateView):
     model = Play
     form_class = PlayForm
-    template_name = 'staff/play/update_play.html'
+    template_name = 'admin/update_play.html'
     success_url = '/'
 
 
 class CreatePlayView(AdminPassTestMixin, CreateView):
     model = Play
     form_class = PlayForm
-    template_name = 'staff/play/create_play.html'
+    template_name = 'admin/create_play.html'
     success_url = '/'
 
 
@@ -42,14 +41,14 @@ class DeleteCarouselView(AdminPassTestMixin, DeleteView):
 class UpdateCarouselView(AdminPassTestMixin, UpdateView):
     model = Carousel
     form_class = CarouselForm
-    template_name = 'staff/carousel/update_carousel.html'
+    template_name = 'admin/update_carousel.html'
     success_url = '/'
 
 
 class CreateCarouselView(AdminPassTestMixin, CreateView):
     model = Carousel
     form_class = CarouselForm
-    template_name = 'staff/carousel/create_carousel.html'
+    template_name = 'admin/create_carousel.html'
     success_url = '/'
 
 class MainPageView(TemplateView):
@@ -57,10 +56,9 @@ class MainPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        now = timezone.now()
         context["carousel_images"] = Carousel.objects.all()
         context["plays"] = (
-            Play.objects.filter(date__gte=now).order_by("date")[:3]               
+            Play.objects.filter().order_by("date")[:3]               
         )
         return context
 
@@ -76,10 +74,12 @@ class PartnersPageView(TemplateView):
 class ProgramPageView(ListView):
     model = Play
     template_name = "web/program.html"
+    context_object_name = "plays"
 
 class TicketsPageView(TemplateView):
-    template_name = "web/tickets.html"
+    template_name = "forms/tickets.html"
 
 class PlayView(DetailView):
     template_name = "web/play.html"
     model = Play
+    context_object_name = "play"

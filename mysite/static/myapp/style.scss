@@ -28,7 +28,7 @@ header {
    gap: 10vw;
    padding-top: 32px;
    padding-bottom: 32px;
-   margin-bottom: 60px;
+   margin-bottom: 100px;
   h1 {
     color: #ffffff;
     font-size: 14px; 
@@ -65,7 +65,7 @@ header {
   overflow: hidden;
   padding: 16px;
   background-color: $background-color;
-  margin-bottom:184px ;
+  margin-bottom:100px ;
   h2 {
     text-align: center;
     margin-bottom: 16px;
@@ -142,16 +142,14 @@ img {
   font-family: "Georgia", serif;
   background-color: $background-color;
   color: #222;
-  margin-bottom: 100px;
   padding-bottom: 50px;
-  .container-afisha {
-    margin-top: 50px;
+  
+    .container-afisha, .container-afisha-program{
+        margin-top: 50px;
     padding: 0 clamp(16px, 10vw, 312px);
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-bottom: 60px;
-
     h2 {
       font-size: clamp(26px, 3vw, 38px);
       font-weight: 700;
@@ -174,7 +172,10 @@ img {
       }
     }
   }
+  .container-afisha{justify-content: space-between;}
+  .container-afisha-program{justify-content: center;}
 }
+
   .play-container {
     padding: 0 clamp(16px, 10vw, 312px);
     display: flex;
@@ -259,10 +260,15 @@ img {
           }
         }
 
+
+
+      }
+    }
+  }
+
         .buy-btn-more,
-        .buy-btn-reservation {
+        .buy-btn-reservation{
           position: absolute;
-          right: 40px;
           background-color: #00b894;
           color: white;
           padding: 10px 26px;
@@ -270,24 +276,26 @@ img {
           text-decoration: none;
           font-weight: 500;
           transition: 0.25s ease;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
+          box-shadow: 0 2px 8px #0000001a;
+          right: 40px;
+           right: 40px;
           &:hover {
             background-color: #009e7a;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
           }
         }
-
+        
         .buy-btn-more {
           bottom: 40px;
+         
         }
-
         .buy-btn-reservation {
           bottom: 100px;
+          
         }
-      }
-    }
-  }
+
+
+
 
 
 footer {
@@ -297,7 +305,7 @@ footer {
   display: flex;
   justify-content: space-between;
   font-family: "Georgia", serif;
-
+margin-top: 100px;
   h4 {
     color: #fff;
     font-size: 20px;
@@ -370,7 +378,7 @@ footer {
     .carousel-slide {
     width: calc((100% - ($gap )) / 2); 
   }
-  .container-afisha {
+  .container-afisha, .container-afisha-program {
       padding: 0 80px;
 
       h2 {
@@ -435,13 +443,14 @@ footer {
         }
       }
     }
+
     footer{
           padding: 40px 80px;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 40px;
-
+    
     &::before {
       width: 100%;
       margin-bottom: 20px;
@@ -453,6 +462,97 @@ footer {
     }
     }
 }
+
+
+.play-one-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  padding-bottom: 100px;
+  background-color: #f8f8f8;
+  border-radius: 1rem;
+  
+  .play-one-name {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  .play-one {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    .play-one-image {
+      flex: 1 1 350px;
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 1rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        object-fit: cover;
+      }
+    }
+
+    .play-one-info {
+      flex: 1 1 400px;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+      line-height: 1.6;
+      margin-right: 20px;
+      p {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        color: #222;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  
+    .buy-btn-reservation-play-one{
+      display: inline-block;
+      background: linear-gradient(90deg, #00c26f, #00a64f);
+      color: #fff;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: linear-gradient(90deg, #00a64f, #009347);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 166, 79, 0.3);
+      }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* --- Адаптация для экранов до 480px --- */
 @media (max-width: 480px) {
@@ -471,7 +571,7 @@ footer {
    .carousel-slide {
     width: 100%; // 1 картинка
   }
-   .container-afisha {
+   .container-afisha, .container-afisha-program {
       padding: 0 20px;
       flex-direction: column;
       align-items: flex-start;

@@ -29,6 +29,9 @@ class ReservationForm(forms.ModelForm):
         if play.tickets < amount:
             raise ValidationError("Not enough tickets")
         
+        if play.status == 1:
+            raise ValidationError("Tickets are already bought")
+        
         self.instance.play = play
         return cleaned_data
     

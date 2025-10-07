@@ -41,13 +41,16 @@ Main
         <img src="{{ play.image.url }}" alt="">
         <div class="play-info">
         <h3>{{ play.name }}</h3>
+        <h3>{{play.get_status_display}}</h3>
         <a href="{% url 'play_page' play.id %}" class="buy-btn-more">Подробнее</a>
+        {% if play.status == 2 %}
         <a href="{% url 'create_reservation' play.id %}" class="buy-btn-reservation">Заказать билет</a>
+      {% endif %}
       </div>
     </div>
       </div>
     {% endfor %}
-
+</div>
 </div>
 
 {% endblock %}
