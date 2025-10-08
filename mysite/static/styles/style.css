@@ -71,11 +71,15 @@ header nav span {
   padding: 16px;
   background-color: #fafafa;
   margin-bottom: 100px;
+  -webkit-animation: fadeIn 1s ease-in-out;
+          animation: fadeIn 1s ease-in-out;
 }
 .carousel h2 {
   text-align: center;
   margin-bottom: 16px;
   color: #191919;
+  -webkit-animation: slideDown 0.5s ease-in-out;
+          animation: slideDown 0.5s ease-in-out;
 }
 .carousel .carousel-container {
   display: -webkit-box;
@@ -86,6 +90,8 @@ header nav span {
   -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  -webkit-animation: slideDown 0.5s ease-in-out;
+          animation: slideDown 0.5s ease-in-out;
 }
 .carousel .carousel-container::-webkit-scrollbar {
   background: transparent;
@@ -104,6 +110,8 @@ header nav span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-animation: slideDown 0.5s ease-in-out;
+          animation: slideDown 0.5s ease-in-out;
   scroll-snap-align: start;
 }
 .carousel .carousel-slide img {
@@ -123,6 +131,8 @@ header nav span {
           justify-content: center;
   gap: 40px;
   margin-top: 12px;
+  -webkit-animation: slideDown 0.5s ease-in-out;
+          animation: slideDown 0.5s ease-in-out;
 }
 .carousel .carousel-buttons button.prev,
 .carousel .carousel-buttons button.next {
@@ -731,5 +741,201 @@ footer .footer-socials a:hover {
   }
   footer .footer-socials a {
     font-size: 13px;
+  }
+}
+.contacts {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  -webkit-animation: fadeIn 1s ease-in-out;
+          animation: fadeIn 1s ease-in-out;
+}
+.contacts h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+  -webkit-animation: slideDown 1s ease-out;
+          animation: slideDown 1s ease-out;
+}
+.contacts-info {
+  -webkit-animation: fadeUp 1s ease-in-out 0.3s both;
+          animation: fadeUp 1s ease-in-out 0.3s both;
+}
+.contacts-info p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+.contacts-info p a {
+  color: #007bff;
+  text-decoration: none;
+  -webkit-transition: color 0.3s, -webkit-transform 0.3s;
+  transition: color 0.3s, -webkit-transform 0.3s;
+  transition: color 0.3s, transform 0.3s;
+  transition: color 0.3s, transform 0.3s, -webkit-transform 0.3s;
+}
+.contacts-info p a:hover {
+  color: #0056b3;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+.contacts-socials {
+  margin-top: 1rem;
+  -webkit-animation: fadeUp 1s ease-in-out 0.5s both;
+          animation: fadeUp 1s ease-in-out 0.5s both;
+}
+.contacts-socials a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 0.3rem;
+  -webkit-transition: color 0.3s, -webkit-transform 0.3s;
+  transition: color 0.3s, -webkit-transform 0.3s;
+  transition: color 0.3s, transform 0.3s;
+  transition: color 0.3s, transform 0.3s, -webkit-transform 0.3s;
+}
+.contacts-socials a:hover {
+  color: #007bff;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+.contacts-map {
+  margin-top: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  opacity: 0;
+  -webkit-animation: fadeUp 1.2s ease-out 0.7s forwards;
+          animation: fadeUp 1.2s ease-out 0.7s forwards;
+}
+.contacts-map iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+}
+.contacts-map:hover iframe {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+.partners {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: center;
+  -webkit-animation: fadeIn 1s ease-in-out;
+          animation: fadeIn 1s ease-in-out;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f8f9fb));
+  background: linear-gradient(180deg, #fff, #f8f9fb);
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+.partners h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+  color: #222;
+  -webkit-animation: slideDown 1s ease-out;
+          animation: slideDown 1s ease-out;
+}
+.partners ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  -webkit-animation: fadeUp 1s ease-in-out 0.3s both;
+          animation: fadeUp 1s ease-in-out 0.3s both;
+}
+.partners ul li {
+  margin: 0.6rem 0;
+  font-size: 1.1rem;
+  padding: 0.6rem 1rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+.partners ul li:last-child {
+  border-bottom: none;
+}
+.partners ul li:hover {
+  background: rgba(0, 123, 255, 0.05);
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+.partners ul li a {
+  text-decoration: none;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slideDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@-webkit-keyframes fadeUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }

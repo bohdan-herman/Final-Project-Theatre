@@ -66,10 +66,12 @@ header {
   padding: 16px;
   background-color: $background-color;
   margin-bottom:100px ;
+  animation: fadeIn 1s ease-in-out;
   h2 {
     text-align: center;
     margin-bottom: 16px;
     color: #191919;
+    animation: slideDown 0.5s ease-in-out;
   }
 
   .carousel-container {
@@ -78,7 +80,7 @@ header {
     overflow: hidden; 
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-
+    animation: slideDown 0.5s ease-in-out;
     &::-webkit-scrollbar {
       background: transparent;
     }
@@ -90,7 +92,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-   
+   animation: slideDown 0.5s ease-in-out;
     scroll-snap-align: start;
 img {
   width: 100%;
@@ -106,7 +108,7 @@ img {
     justify-content: center;
     gap: 40px;
     margin-top: 12px;
-
+    animation: slideDown 0.5s ease-in-out;
     button.prev,
     button.next {
       width: 35px;
@@ -659,3 +661,148 @@ margin-top: 100px;
 }
   
 
+.contacts {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    animation: slideDown 1s ease-out;
+  }
+
+  &-info {
+    animation: fadeUp 1s ease-in-out 0.3s both;
+
+    p {
+      margin: 0.3rem 0;
+      font-size: 1rem;
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s, transform 0.3s;
+
+        &:hover {
+          color: #0056b3;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  &-socials {
+    margin-top: 1rem;
+    animation: fadeUp 1s ease-in-out 0.5s both;
+
+    a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 0.3rem;
+      transition: color 0.3s, transform 0.3s;
+
+      &:hover {
+        color: #007bff;
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  &-map {
+    margin-top: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeUp 1.2s ease-out 0.7s forwards;
+
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+      transition: transform 0.6s ease;
+    }
+
+    &:hover iframe {
+      transform: scale(1.03);
+    }
+  }
+}
+
+
+.partners {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  background: linear-gradient(180deg, #fff, #f8f9fb);
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    color: #222;
+    animation: slideDown 1s ease-out;
+
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    animation: fadeUp 1s ease-in-out 0.3s both;
+
+    li {
+      margin: 0.6rem 0;
+      font-size: 1.1rem;
+      padding: 0.6rem 1rem;
+      transition: all 0.3s ease;
+      border-radius: 10px;
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background: rgba(0, 123, 255, 0.05);
+        transform: translateY(-2px);
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
