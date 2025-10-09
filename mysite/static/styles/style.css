@@ -144,6 +144,7 @@ header nav span {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
+  border: 5px solid #2b1d14;
 }
 .carousel .carousel-buttons {
   display: -webkit-box;
@@ -342,6 +343,7 @@ header nav span {
   background-color: #fff;
 }
 .play-container .play .play-content img {
+  display: block;
   width: 320px;
   height: 240px;
   border-radius: 12px;
@@ -1134,6 +1136,7 @@ footer .footer-socials a:hover {
   transition: border-color 0.2s, box-shadow 0.2s;
   transition: border-color 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
   margin-top: 10px;
+  resize: none;
 }
 .feedback input:focus,
 .feedback textarea:focus,
