@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.urls import path, include
-from myapp.views import MainPageView, ContactsPageView, ProgramPageView, AboutUsPageView, PartnersPageView, TicketsPageView
+from myapp.views import MainPageView, ContactsPageView, ProgramPageView, AboutUsPageView, PartnersPageView, TicketsPageView, FeedbackPageView
 from django.conf import settings
 from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('play/', include('myapp.play_url')),
@@ -13,6 +14,7 @@ urlpatterns = [
     path('about-us/', AboutUsPageView.as_view(), name = "about_us_page"),
     path('partners/', PartnersPageView.as_view(), name = "partners_page"),
     path('tickets/', TicketsPageView.as_view(), name = "tickets_page"),
+    path('feed-back/', FeedbackPageView.as_view(), name = "feedback_page"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

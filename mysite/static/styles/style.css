@@ -23,7 +23,7 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: #191919;
+  background-color: #2b1d14;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -69,17 +69,40 @@ header nav span {
   width: 100%;
   overflow: hidden;
   padding: 16px;
-  background-color: #fafafa;
+  background-color: #fff;
   margin-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   -webkit-animation: fadeIn 1s ease-in-out;
           animation: fadeIn 1s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .carousel h2 {
-  text-align: center;
-  margin-bottom: 16px;
-  color: #191919;
-  -webkit-animation: slideDown 0.5s ease-in-out;
-          animation: slideDown 0.5s ease-in-out;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  color: #222;
+  -webkit-animation: slideDown 1s ease-out;
+          animation: slideDown 1s ease-out;
+}
+.carousel h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #e67e22;
+  margin-top: 0.5rem;
+  border-radius: 2px;
 }
 .carousel .carousel-container {
   display: -webkit-box;
@@ -130,7 +153,7 @@ header nav span {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 40px;
-  margin-top: 12px;
+  margin-top: 30px;
   -webkit-animation: slideDown 0.5s ease-in-out;
           animation: slideDown 0.5s ease-in-out;
 }
@@ -172,9 +195,11 @@ header nav span {
       -ms-flex-direction: column;
           flex-direction: column;
   font-family: "Georgia", serif;
-  background-color: #fafafa;
+  background-color: #fff;
   color: #222;
   padding-bottom: 50px;
+  -webkit-animation: fadeIn 1s ease-in-out;
+          animation: fadeIn 1s ease-in-out;
 }
 .afisha .container-afisha, .afisha .container-afisha-program {
   margin-top: 50px;
@@ -188,9 +213,21 @@ header nav span {
   margin-bottom: 60px;
 }
 .afisha .container-afisha h2, .afisha .container-afisha-program h2 {
-  font-size: clamp(26px, 3vw, 38px);
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  font-size: 2.5rem;
+  position: relative;
+  display: inline-block;
+  color: #222;
+  -webkit-animation: slideDown 1s ease-out;
+          animation: slideDown 1s ease-out;
+}
+.afisha .container-afisha h2::after, .afisha .container-afisha-program h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #e67e22;
+  margin-top: 0.5rem;
+  border-radius: 2px;
 }
 .afisha .container-afisha a, .afisha .container-afisha-program a {
   display: -webkit-box;
@@ -201,14 +238,14 @@ header nav span {
           align-items: center;
   gap: 8px;
   text-decoration: none;
-  color: #007f6d;
+  color: #2b1d14;
   font-size: clamp(14px, 1.5vw, 18px);
   font-weight: 500;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
 .afisha .container-afisha a:hover, .afisha .container-afisha-program a:hover {
-  color: #00b894;
+  color: #e67e22;
   -webkit-transform: translateX(3px);
           transform: translateX(3px);
 }
@@ -260,7 +297,7 @@ header nav span {
 .play-container .play .play-date {
   width: 180px;
   text-align: center;
-  background: #f0f0f0;
+  background: #2b1d14;
   padding: 50px 0;
   font-weight: 600;
   display: -webkit-box;
@@ -283,12 +320,12 @@ header nav span {
 .play-container .play .play-date .day {
   display: block;
   font-size: 48px;
-  color: #222;
+  color: #fff;
 }
 .play-container .play .play-date .month {
   text-transform: uppercase;
   font-size: 16px;
-  color: #777;
+  color: #fff;
 }
 .play-container .play .play-content {
   display: -webkit-box;
@@ -346,7 +383,7 @@ header nav span {
 .buy-btn-more,
 .buy-btn-reservation {
   position: absolute;
-  background-color: #00b894;
+  background-color: #e67e22;
   color: white;
   padding: 10px 26px;
   border-radius: 30px;
@@ -358,10 +395,11 @@ header nav span {
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1019607843);
   right: 40px;
   right: 40px;
+  text-align: center;
 }
 .buy-btn-more:hover,
 .buy-btn-reservation:hover {
-  background-color: #009e7a;
+  background-color: #ffb45c;
   -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
           box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
@@ -375,7 +413,7 @@ header nav span {
 }
 
 footer {
-  background-color: #191919;
+  background-color: #2b1d14;
   color: #dcdcdc;
   padding: 60px 312px;
   display: -webkit-box;
@@ -475,9 +513,9 @@ footer .footer-socials a:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     min-height: auto;
   }
   .play-container .play .play-date {
@@ -548,8 +586,10 @@ footer .footer-socials a:hover {
   margin: 0 auto;
   padding: 2rem 1rem;
   padding-bottom: 100px;
-  background-color: #f8f8f8;
   border-radius: 1rem;
+  -webkit-animation: fadeIn 1s ease-in-out;
+          animation: fadeIn 1s ease-in-out;
+  background-color: #2b1d14;
 }
 .play-one-container .play-one-name {
   text-align: center;
@@ -560,6 +600,7 @@ footer .footer-socials a:hover {
   font-weight: 600;
   display: inline-block;
   padding-bottom: 0.5rem;
+  color: #ffb45c;
 }
 .play-one-container .play-one {
   display: -webkit-box;
@@ -599,26 +640,22 @@ footer .footer-socials a:hover {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 400px;
           flex: 1 1 400px;
-  background: #fff;
   padding: 1.5rem;
   border-radius: 1rem;
-  -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
   line-height: 1.6;
   margin-right: 20px;
 }
 .play-one-container .play-one .play-one-info p {
   margin-bottom: 1rem;
   font-size: 1rem;
-  color: #222;
+  color: #fff;
 }
 .play-one-container .play-one .play-one-info p:last-child {
   margin-bottom: 0;
 }
 .play-one-container .buy-btn-reservation-play-one {
   display: inline-block;
-  background: -webkit-gradient(linear, left top, right top, from(#00c26f), to(#00a64f));
-  background: linear-gradient(90deg, #00c26f, #00a64f);
+  background: #e67e22;
   color: #fff;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
@@ -629,12 +666,11 @@ footer .footer-socials a:hover {
   transition: all 0.3s ease;
 }
 .play-one-container .buy-btn-reservation-play-one:hover {
-  background: -webkit-gradient(linear, left top, right top, from(#00a64f), to(#009347));
-  background: linear-gradient(90deg, #00a64f, #009347);
+  background: #ffb45c;
   -webkit-transform: translateY(-2px);
           transform: translateY(-2px);
-  -webkit-box-shadow: 0 4px 10px rgba(0, 166, 79, 0.3);
-          box-shadow: 0 4px 10px rgba(0, 166, 79, 0.3);
+  -webkit-box-shadow: #e67e22;
+          box-shadow: #e67e22;
 }
 
 /* --- Адаптация для экранов до 480px --- */
@@ -825,6 +861,45 @@ footer .footer-socials a:hover {
           transform: scale(1.03);
 }
 
+.about-us {
+  max-width: 800px;
+  margin: 0 auto 100px auto;
+  padding: 3rem 2rem;
+  text-align: left;
+  font-family: "Arial", sans-serif;
+  line-height: 1.8;
+  color: #333;
+  -webkit-animation: fadeIn 1s ease-in-out;
+          animation: fadeIn 1s ease-in-out;
+}
+.about-us h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  color: #222;
+  -webkit-animation: slideDown 1s ease-out;
+          animation: slideDown 1s ease-out;
+}
+.about-us h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #e67e22;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+.about-us .about-us-info {
+  -webkit-animation: slideUp 1s ease-out;
+          animation: slideUp 1s ease-out;
+}
+.about-us .about-us-info p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #444;
+}
+
 .partners {
   max-width: 800px;
   margin: 0 auto;
@@ -832,8 +907,7 @@ footer .footer-socials a:hover {
   text-align: center;
   -webkit-animation: fadeIn 1s ease-in-out;
           animation: fadeIn 1s ease-in-out;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f8f9fb));
-  background: linear-gradient(180deg, #fff, #f8f9fb);
+  background: #2b1d14;
   border-radius: 1rem;
   -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -843,9 +917,9 @@ footer .footer-socials a:hover {
   margin-bottom: 1.5rem;
   position: relative;
   display: inline-block;
-  color: #222;
   -webkit-animation: slideDown 1s ease-out;
           animation: slideDown 1s ease-out;
+  color: #ffb45c;
 }
 .partners ul {
   list-style: none;
@@ -861,17 +935,242 @@ footer .footer-socials a:hover {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   border-radius: 10px;
+  color: #fff;
 }
 .partners ul li:last-child {
   border-bottom: none;
 }
 .partners ul li:hover {
-  background: rgba(0, 123, 255, 0.05);
+  background: #ffb45c;
   -webkit-transform: translateY(-2px);
           transform: translateY(-2px);
 }
 .partners ul li a {
   text-decoration: none;
+}
+
+.reservation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  -webkit-animation: fadeIn 1s ease-in-out;
+          animation: fadeIn 1s ease-in-out;
+}
+.reservation label {
+  font-weight: 600;
+  color: #333;
+}
+.reservation input, .reservation select {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  -webkit-transition: border-color 0.2s, -webkit-box-shadow 0.2s;
+  transition: border-color 0.2s, -webkit-box-shadow 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
+  margin-top: 10px;
+}
+.reservation input:focus, .reservation select:focus {
+  outline: none;
+  border-color: #e67e22;
+  -webkit-box-shadow: 0 0 0 3px #e67e22;
+          box-shadow: 0 0 0 3px #e67e22;
+}
+.reservation button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #e67e22;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: background 0.2s, -webkit-transform 0.1s;
+  transition: background 0.2s, -webkit-transform 0.1s;
+  transition: background 0.2s, transform 0.1s;
+  transition: background 0.2s, transform 0.1s, -webkit-transform 0.1s;
+}
+.reservation button:hover {
+  background: #ffb45c;
+}
+.reservation button:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.reservation-container {
+  max-width: 700px;
+  margin: 3rem auto 2rem;
+  padding: 2rem 2.5rem;
+  color: #2b1d14;
+  line-height: 1.6;
+  -webkit-animation: slideDown 1s ease-in-out;
+          animation: slideDown 1s ease-in-out;
+}
+.reservation-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  color: #222;
+  -webkit-animation: slideDown 1s ease-out;
+          animation: slideDown 1s ease-out;
+}
+.reservation-container h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #e67e22;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+.reservation-container p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.reservation-info {
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  padding: 1.5rem 2rem;
+  background: #2b1d14;
+  color: #fff;
+  border-radius: 1rem;
+  list-style: disc inside;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  -webkit-animation: fadeUp 1s ease-in-out;
+          animation: fadeUp 1s ease-in-out;
+}
+.reservation-info h2 {
+  font-size: 1.6rem;
+  color: #ffb45c;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.reservation-info li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.reservation-info li::marker {
+  color: #ffb45c;
+}
+
+.feedback-button {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  border-radius: 20px;
+  color: #fff;
+  background-color: #191919;
+  -webkit-animation: fadeUp 0.5s ease-in-out;
+          animation: fadeUp 0.5s ease-in-out;
+  -webkit-transition: background 0.2s, -webkit-transform 0.5s;
+  transition: background 0.2s, -webkit-transform 0.5s;
+  transition: background 0.2s, transform 0.5s;
+  transition: background 0.2s, transform 0.5s, -webkit-transform 0.5s;
+}
+.feedback-button:hover {
+  background-color: #e67e22;
+  -webkit-transform: translateY(-10px) translateX(-10px) scale(1.2);
+          transform: translateY(-10px) translateX(-10px) scale(1.2);
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.feedback {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2rem 2.5rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  -webkit-animation: fadeUp 0.6s ease-in-out;
+          animation: fadeUp 0.6s ease-in-out;
+}
+.feedback label {
+  font-weight: 600;
+  color: #2b1d14;
+  margin-bottom: 0.25rem;
+}
+.feedback input,
+.feedback textarea,
+.feedback select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  -webkit-transition: border-color 0.2s, -webkit-box-shadow 0.2s;
+  transition: border-color 0.2s, -webkit-box-shadow 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
+  margin-top: 10px;
+}
+.feedback input:focus,
+.feedback textarea:focus,
+.feedback select:focus {
+  outline: none;
+  border-color: #e67e22;
+  -webkit-box-shadow: 0 0 0 3px #e67e22;
+          box-shadow: 0 0 0 3px #e67e22;
+}
+.feedback button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  background-color: #2b1d14;
+  color: #fff8f0;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s, -webkit-transform 0.2s, -webkit-box-shadow 0.3s;
+  transition: background-color 0.3s, -webkit-transform 0.2s, -webkit-box-shadow 0.3s;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s, -webkit-transform 0.2s, -webkit-box-shadow 0.3s;
+}
+.feedback button:hover {
+  background-color: #ffb45c;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.feedback button:active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 @-webkit-keyframes fadeIn {

@@ -1,14 +1,27 @@
-{% extends base.html %}
+{% extends "web/base.html" %}
 
 {% block title %}
 Resrvation
-{% enblock %}
+{% endblock %}
 
 {% block content %}
+
+
+
+
 
 <form class="reservation" method="post">
     {% csrf_token %}
     {{form}}
+    <button type="submit">Send</button>
 </form>
 
-{% enblock %}
+<ul class="reservation-info">
+    <h2>Важно</h2>
+    <li>Бронь действительна в течение 48 часов с момента подтверждения.</li>
+    <li>Оплата возможна на месте в кассе театра или онлайн (в будущем).</li>
+    <li>При опоздании более чем на 15 минут бронь может быть аннулирована.</li>
+</ul>
+
+
+{% endblock %}

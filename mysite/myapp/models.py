@@ -37,7 +37,7 @@ class Play(models.Model):
 class Reservation(models.Model):
     play = models.ForeignKey(Play, on_delete=models.CASCADE)
     amount = models.PositiveIntegerField()
-    email = models.EmailField()
+    email = models.EmailField(null=False, blank=False)
     status = models.IntegerField(choices=STATUS_RESERVATION, default=1)
 
     def save(self, *args, **kwargs):
@@ -53,7 +53,7 @@ class Reservation(models.Model):
         return super().save(*args, **kwargs)
         
 class Feedback(models.Model):
-    email = models.EmailField()
+    email = models.EmailField(null=False, blank=False)
     text = models.TextField()
 
         
