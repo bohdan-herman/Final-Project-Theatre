@@ -2,10 +2,6 @@ from django import forms
 from .models import Play, Reservation, Carousel, Feedback
 from django.core.exceptions import ValidationError
 
-class PlayForm(forms.ModelForm):
-    class Meta:
-        model = Play
-        fields = ['name', 'price', 'image', 'text', 'tickets']
     
 class ReservationForm(forms.ModelForm):
     class Meta:
@@ -58,15 +54,6 @@ class ReservationWithPlayForm(forms.ModelForm):
             raise ValidationError("Tickets are already bought")
 
         return cleaned_data
-
-
-
-
-
-class CarouselForm(forms.ModelForm):
-    class Meta:
-        model = Carousel
-        fields = ["image"]       
 
 
 class FeedbackForm(forms.ModelForm):

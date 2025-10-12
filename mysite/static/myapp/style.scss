@@ -397,6 +397,8 @@ margin-top: 100px;
     width: calc((100% - ($gap * 2)) / 3); 
   }
 }
+
+
 /* --- Адаптация для экранов до 1024px --- */
 @media (max-width: 1024px) {
   header {
@@ -563,10 +565,10 @@ margin-top: 100px;
         }
       }
       pre {
-  white-space: pre-wrap;    /* сохраняет переносы и пробелы */
-  word-wrap: break-word;    /* переносит длинные слова */
+  white-space: pre-wrap;   
+  word-wrap: break-word;   
   overflow-wrap: break-word;  
-  font-family: inherit;     /* шрифт как у остального текста */
+  font-family: inherit;     
   font-size: 1rem;
   color: $background-color;
   margin-bottom: 1rem;

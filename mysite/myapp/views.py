@@ -1,10 +1,9 @@
 from django.shortcuts import render
-from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth import login
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView, TemplateView
 from .mixins import RequestToFormKwargsMixin, PkToFormKwargsMixin, AdminPassTestMixin
 from .models import Reservation, Play, Carousel, Feedback
-from .forms import ReservationForm, PlayForm, CarouselForm, ReservationWithPlayForm, FeedbackForm
+from .forms import ReservationForm, ReservationWithPlayForm, FeedbackForm
 from django.urls import reverse_lazy
 
 class CreateReservationView(PkToFormKwargsMixin, CreateView):

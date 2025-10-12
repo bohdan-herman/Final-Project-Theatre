@@ -61,5 +61,8 @@ class Feedback(models.Model):
     email = models.EmailField(null=False, blank=False)
     text = models.TextField()
 
+    def __str__(self):
+        return f"{self.email}"
+
         
 
