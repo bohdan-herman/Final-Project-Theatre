@@ -14,43 +14,6 @@ class CreateReservationView(PkToFormKwargsMixin, CreateView):
     success_url = '/'
 
 
-class DeletePlayView(AdminPassTestMixin, DeleteView):
-    model = Play
-    success_url = '/'
-
-
-class UpdatePlayView(AdminPassTestMixin, UpdateView):
-    model = Play
-    form_class = PlayForm
-    template_name = 'admin/update_play.html'
-    success_url = '/'
-
-
-class CreatePlayView(AdminPassTestMixin, CreateView):
-    model = Play
-    form_class = PlayForm
-    template_name = 'admin/create_play.html'
-    success_url = '/'
-
-
-class DeleteCarouselView(AdminPassTestMixin, DeleteView):
-    model = Carousel
-    success_url = '/'
-
-
-class UpdateCarouselView(AdminPassTestMixin, UpdateView):
-    model = Carousel
-    form_class = CarouselForm
-    template_name = 'admin/update_carousel.html'
-    success_url = '/'
-
-
-class CreateCarouselView(AdminPassTestMixin, CreateView):
-    model = Carousel
-    form_class = CarouselForm
-    template_name = 'admin/create_carousel.html'
-    success_url = '/'
-
 class MainPageView(TemplateView):
     template_name = "web/main.html"
 
