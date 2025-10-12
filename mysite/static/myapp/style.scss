@@ -529,8 +529,8 @@ margin-top: 100px;
   .play-one {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
+    align-items: start;
     
     gap: 40px;
     .play-one-image {
@@ -562,6 +562,15 @@ margin-top: 100px;
           margin-bottom: 0;
         }
       }
+      pre {
+  white-space: pre-wrap;    /* сохраняет переносы и пробелы */
+  word-wrap: break-word;    /* переносит длинные слова */
+  overflow-wrap: break-word;  
+  font-family: inherit;     /* шрифт как у остального текста */
+  font-size: 1rem;
+  color: $background-color;
+  margin-bottom: 1rem;
+}
     }
   }
   
@@ -895,7 +904,6 @@ margin-top: 100px;
       box-shadow: 0 0 0 3px $dark-orange;
     }
   }
-
   button {
     padding: 0.75rem;
     border: none;

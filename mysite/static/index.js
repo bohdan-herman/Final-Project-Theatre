@@ -1,34 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const carousel = document.querySelector(".carousel-container");
-  const slide = document.querySelector(".carousel-slide");
-  const style = getComputedStyle(carousel);
-  const gap = parseInt(style.gap) || 8;
+let currentIndex = 0;
 
-  function carouselMove(positive = true) {
-    const slideWidth = slide.clientWidth + gap;
+function carouselMove(forward = true) {
+  const container = document.querySelector(".carousel-container");
+  const slides = document.querySelectorAll(".carousel-slide");
 
-    if (positive) {
-      if (
-        carousel.scrollLeft + carousel.clientWidth >=
-        carousel.scrollWidth - slideWidth
-      ) {
-        carousel.scrollLeft = 0;
-      } else {
-        carousel.scrollLeft += slideWidth;
-      }
-    } else {
-      if (carousel.scrollLeft <= 0) {
-        carousel.scrollLeft = carousel.scrollWidth - carousel.clientWidth;
-      } else {
-        carousel.scrollLeft -= slideWidth;
-      }
-    }
+  if (!slides.length) return;
+
+
+  const gap = 8; 
+  const slideWidth = slides[0].offsetWidth + gap;
+
+  
+  if (forward) {
+    currentIndex = (currentIndex + 1) % slides.length;
+  } else {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
   }
 
-  setInterval(() => carouselMove(true), 4000);
-  window.carouselMove = carouselMove; // чтобы кнопки могли вызывать функцию
-});
 
-setInterval(() => {
-  carouselMove(true);
-}, 4000);
+  container.scrollTo({
+    left: slideWidth * currentIndex,
+    behavior: "smooth",
+  });
+}

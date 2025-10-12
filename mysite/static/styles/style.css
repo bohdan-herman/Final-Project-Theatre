@@ -610,12 +610,12 @@ footer .footer-socials a:hover {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   gap: 40px;
 }
 .play-one-container .play-one .play-one-image {
@@ -654,6 +654,15 @@ footer .footer-socials a:hover {
 }
 .play-one-container .play-one .play-one-info p:last-child {
   margin-bottom: 0;
+}
+.play-one-container .play-one .play-one-info pre {
+  white-space: pre-wrap; /* сохраняет переносы и пробелы */
+  word-wrap: break-word; /* переносит длинные слова */
+  overflow-wrap: break-word;
+  font-family: inherit; /* шрифт как у остального текста */
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 1rem;
 }
 .play-one-container .buy-btn-reservation-play-one {
   display: inline-block;

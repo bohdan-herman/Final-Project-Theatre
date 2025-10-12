@@ -17,6 +17,8 @@ STATUS_PLAY = (
 )
 class Carousel(models.Model):
     image = models.ImageField()
+    def __str__(self):
+        return f"{self.image.url}"
 
 class Play(models.Model):
     name = models.CharField(max_length=256)
@@ -32,6 +34,9 @@ class Play(models.Model):
         elif self.tickets > 0:
             self.status = 2
         super().save(*args, **kwargs)
+    
+    def __str__(self):
+        return f"{self.name} - {self.date.day} {self.date.strftime('%B')}"
 
 
 class Reservation(models.Model):
@@ -45,7 +50,7 @@ class Reservation(models.Model):
         self.play.save()
         send_mail(
             subject=f'Бронирование на спектакль {self.play.name}',
-            message=f'Вы забронировали {self.amount} билетов на спектакль {self.play.name}.',
+            message=f'Вы забронировали {self.amount} билетов на спектакль {self.play.name}. Всего: {self.play.price * self.amount} Kč.',
             from_email=settings.DEFAULT_FROM_EMAIL,
             recipient_list=[self.email],
             fail_silently=False,
