@@ -683,6 +683,9 @@ footer .footer-socials a:hover {
   -webkit-box-shadow: #e67e22;
           box-shadow: #e67e22;
 }
+.play-one-container .play-date {
+  border-radius: 10px;
+}
 
 /* --- Адаптация для экранов до 480px --- */
 @media (max-width: 480px) {
@@ -788,6 +791,9 @@ footer .footer-socials a:hover {
   }
   footer .footer-socials a {
     font-size: 13px;
+  }
+  .play-date {
+    border-radius: 10px;
   }
 }
 .contacts {
