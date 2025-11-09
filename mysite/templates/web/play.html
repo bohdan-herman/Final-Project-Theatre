@@ -1,0 +1,31 @@
+{% extends "web/base.html" %}
+
+
+{% block title %}
+Play-{play.name}
+{% endblock %}
+
+
+{% block content %}
+<div class="play-one-container">
+  <div class="play-one-name">
+    <h2>{{play.name}}</h2>
+  </div>
+  <div class="play-one">
+    <div class="play-one-image">
+        <img src="{{ play.image.url }}" alt="">
+    </div>
+    <div class="play-one-info">
+        <pre>{{play.text}}</pre>
+        <p>Цена: {{play.price}} Kč</p>
+        <p>{{play.get_status_display}}</p>
+        <br>
+            {% if play.status == 2 %}
+        <a href="{% url 'create_reservation' play.id %}" class="buy-btn-reservation-play-one">Заказать билет</a>
+      {% endif %}
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}
